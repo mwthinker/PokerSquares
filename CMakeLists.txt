@@ -14,7 +14,10 @@ endif ()
 
 # Source files.
 set(SOURCES
+	src/card.h
+	src/deck.h
 	src/main.cpp
+	src/pokersquaresboard.h
 )
 # End of source files.
 
@@ -49,11 +52,11 @@ include_directories(
 add_executable(PokerSquares ${SOURCES})
 
 if (MSVC)
-	set_target_properties(MWetris PROPERTIES LINK_FLAGS_DEBUG "/NODEFAULTLIB:msvcrt")
-	set_target_properties(MWetris PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:windows")
+	set_target_properties(PokerSquares PROPERTIES LINK_FLAGS_DEBUG "/NODEFAULTLIB:msvcrt")
+	set_target_properties(PokerSquares PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:windows")
 endif ()
 
-target_link_libraries(MWetris
+target_link_libraries(PokerSquares
 	TinyXML2
 	DataEntry
 	MwLibrary2
